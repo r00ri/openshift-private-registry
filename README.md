@@ -6,6 +6,7 @@ Panduan berikut untuk setup private image registry untuk kebutuhan instalasi ope
 ## Prasyarat
 1. VM dengan spesifikasi minimal (4 vCPU, 8 GB Memory, 500 GB Storage, RHEL 9)
 2. VM dapat mengakses domain domain berikut
+3. VM harus diassign alamat domain tertentu, misalnya registry.example.com
 
 | From                      | To                                                                                                                                                                                                                | Port | Transport | Notes                                                                                                                |
 | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- | --------- | -------------------------------------------------------------------------------------------------------------------- |
@@ -58,6 +59,18 @@ sudo systemctl enable --now docker
 sudo systemctl start docker
 ```
 
+*instalasi docker secara offline*
+1. download docker melalui link berikut [Docker](https://download.docker.com/linux/rhel/?_gl=1*1i3ykwe*_ga*NTE2MTAyMzI0LjE3MzY3MTQ4NDU.*_ga_XJWPQMJYHQ*czE3NTY3NTk1OTkkbzczJGcxJHQxNzU2NzU5NjAwJGo1OSRsMCRoMA..)
+2. masukkan package package tersebut ke VM private registry
+
+```bash
+sudo dnf install ./containerd.io-<version>.<arch>.rpm \
+  ./docker-ce-<version>.<arch>.rpm \
+  ./docker-ce-cli-<version>.<arch>.rpm \
+  ./docker-buildx-plugin-<version>.<arch>.rpm \
+  ./docker-compose-plugin-<version>.<arch>.rpm
+```
+
 ## 2. Setup Harbor
 
 ### 2.1. Download Harbor
@@ -79,7 +92,7 @@ openssl genrsa -out ca.key 4096
 openssl req -x509 -new -nodes -sha512 -days 3650 -subj "/C=ID/ST=Jakarta/L=Jakarta/O=Digital/OU=Infrastructure/CN=${DOMAIN}" -key ca.key -out ca.crt
 ```
 
-### Tips: selalu lihat konten Root CA dengan command berikut
+### Tips: sesuaikan subject Organization, Organization Unit, dan DN, kemudian selalu validasi konten Root CA dengan command berikut
 ```bash
 openssl x509 -in ca.crt -text -noout
 ```
@@ -140,7 +153,7 @@ openssl req -sha512 -new -subj "/C=ID/ST=Jakarta/L=Jakarta/O=Digital/OU=Infrastr
 openssl x509 -req -sha512 -days 3650 -extfile v3.ext -CA ca.crt -CAkey ca.key -CAcreateserial -in ${REGISTRY_DOMAIN}.csr -out ${REGISTRY_DOMAIN}.crt
 ```
 
-Note : ketika anda melakukan signing terhadap domain sebuah domain menggunakan Root CA. output yang dihasilnya seperti ini misalnya :
+Note : sesuaikan subject Organization, Organization Unit, dan DN. ketika anda melakukan signing terhadap domain sebuah domain menggunakan Root CA. output yang dihasilnya seperti ini misalnya :
 
 ```bash
 Certificate request self-signature ok
