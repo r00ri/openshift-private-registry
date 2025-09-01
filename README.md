@@ -559,7 +559,7 @@ oc mirror -c ImageSetConfiguration.yaml --workspace file://${HOME}/${WORKSPACE_F
 
 setelah proses download selesai archive folder workspace menggunakan perintah erbikut
 ```bash
-zip -r ocp-images.zip 
+tar -czvf -r ocp-images.tar.gz 
 ```
 
 kemudian tranfer file tersebut ke private docker registry di environment anda
