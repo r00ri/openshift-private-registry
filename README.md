@@ -1,7 +1,7 @@
 # Setup Openshift Private Image Registry
 
 ## Overview
-Panduan berikut untuk setup private image registry untuk kebutuhan instalasi openshift secara offline, disini hanya VM registry saja yang dapat mengakses jaringan publik untuk mendapatkan resource yang dibutuhkan pada saat instalasi
+Panduan berikut untuk setup private image registry untuk kebutuhan instalasi openshift secara offline, disini hanya VM registry saja yang dapat mengakses domain domain tertentu di jaringan publik untuk mendapatkan resource yang dibutuhkan pada saat instalasi
 
 ## Prasyarat
 1. VM dengan spesifikasi minimal (4 vCPU, 8 GB Memory, 500 GB Storage, RHEL 9)
