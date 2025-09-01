@@ -7,8 +7,6 @@ Panduan berikut untuk setup private image registry untuk kebutuhan instalasi ope
 1. VM dengan spesifikasi minimal (4 vCPU, 8 GB Memory, 500 GB Storage, RHEL 9)
 2. VM dapat mengakses domain domain berikut
 
- Outer pipes  Cell padding 
-No sorting
 | From                      | To                                                                                                                                                                                                                | Port | Transport | Notes                                                                                                                |
 | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- | --------- | -------------------------------------------------------------------------------------------------------------------- |
 | REGISTRY_DOMAIN | [registry.redhat.io](http://registry.redhat.io)                                                                                                                                                                   | 443  | TCP       | Provides core container images                                                                                       |
@@ -42,9 +40,7 @@ No sorting
 |                           | [1.rhel.pool.ntp.org](http://1.rhel.pool.ntp.org)                                                                                                                                                                 | 123  | UDP       |                                                                                                                      |
 |                           | [2.rhel.pool.ntp.org](http://2.rhel.pool.ntp.org/)                                                                                                                                                                | 123  | UDP       |                                                                                                                      |
 |                           | [3.rhel.pool.ntp.org](http://3.rhel.pool.ntp.org/)                                                                                                                                                                | 123  | UDP       |                                                                                                                      |
-📋 Copy
-Clear
-Buy Me a Coffee at ko-fi.com
+
 
 ## Case
 1. Pada environment yang memperbolehkan adanya sebuah VM untuk mengakses domain domain yang telah di sebutkan diatas secara temporary anda dapat mengikuti langkah langkah dibawah ini sampai poin 3.5
