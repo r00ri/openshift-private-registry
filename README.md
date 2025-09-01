@@ -284,6 +284,48 @@ Note: ketika menjalankan command ./install.sh, pastikan output yang dihasilkan s
 
 ### 2.9. Setup Harbor Project
 
+*login ke harbor, user : admin, password : Harbor12345*
+![alt text](images/1.%20harbor-login.png)
+
+*anda akan diarahkan ke halaman dashboard*
+![alt text](images/2.%20harbor-dashboard.png)
+
+*pergi ke menu users dan tekan tombol +new users*
+![alt text](images/3.%20harbor-user.png)
+
+*masukkan informasi user yang anda ingin tambahkan*
+![alt text](images/4.%20harbor-user.png)
+
+*hasil*
+![alt text](images/5.%20harbor-user.png)
+
+*klik menu projects, klik tombol +new projects*
+![alt text](images/6.%20create-project.png)
+
+*masukkan nama project dan tekan tombol save*
+![alt text](images/7.%20create-project-ocp.png)
+
+*hasil*
+![alt text](images/8.%20create-project-ocp.png)
+
+
+*klik nama project yang telah dibuat*
+![alt text](images/9.%20create-project-ocp.png)
+
+*klik tab member dan klik tombol +user*
+![alt text](images/10.%20create-project-ocp.png)
+
+*masukkan nama user yang telah ditambahkan dan klik tombol save*
+![alt text](images/11.%20create-project-ocp.png)
+
+*hasil*
+![alt text](images/12.%20create-project-ocp.png)
+
+
+*jika anda ingin melakukan mirroring image terhadap project cloud pak, buat project dan tambahkan *
+![alt text](images/13.%20create-project-cp.png)
+
+
 
 ## 3. Setup Openshift Mirror
 
@@ -427,6 +469,9 @@ hasil :
 2025/08/30 [INFO]   : mirror time     : 1h10m13.222771756s
 2025/08/30 [INFO]   : 👋 Goodbye, thank you for using oc-mirror
 ```
+
+*tampilan di project ocp*
+![alt text](images/14.%20hasil-pull-image.png)
 
 setelah menjalankan command diatas menghasilkan beberapa file yang harus diperhatikan
 
