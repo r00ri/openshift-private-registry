@@ -72,6 +72,8 @@ sudo dnf install ./containerd.io-<version>.<arch>.rpm \
   ./docker-compose-plugin-<version>.<arch>.rpm
 ```
 
+**Note** : refer to [Install Docker for RHEL](https://docs.docker.com/engine/install/rhel/)
+
 ## 2. Setup Harbor
 
 ### 2.1. Download Harbor
