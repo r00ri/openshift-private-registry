@@ -308,6 +308,7 @@ EOF
 
 ### 2.8. Jalankan Harbor
 ```bash
+ docker load -i harbor.${HARBOR_VERSION}.tar.gz
 ./prepare
 ./install.sh
 ```
